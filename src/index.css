@@ -21,3 +21,9 @@ nav {
   width: 20px;
   height: 20px;
 }
+
+
+.logo-image {
+  width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  margin-top: 10px; /* Ajusta el margen superior según tus necesidades */
+}

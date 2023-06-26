@@ -1,13 +1,15 @@
 import CartWidget from "../CartWidget/CartWidget"
+import logo from "../NavBar/logo.png";
 
 const NavBar = () => {
     return (
         <nav>
-            <h3 className="ecommerce-title">Ecommerce</h3>
+            <h3 className="ecommerce-title">Óptica</h3>
+            <img src={logo} alt="Logo" className="logo-image" />
             <div className="buttons-container">
-                <button>Celulares</button>
-                <button>Tablets</button>
-                <button>Notebooks</button>
+                <button>Lentes de sol</button>
+                <button>Lentes de Contacto</button>
+                <button>Lentes ópticos</button>
             </div>
             <CartWidget/>
         </nav>
