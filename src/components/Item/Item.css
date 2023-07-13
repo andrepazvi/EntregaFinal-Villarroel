@@ -1,17 +1,15 @@
 .CardItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-block; 
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 50px;
   width: 200px;
 }
 
 
 .CardItem-imgContainer {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 10px;

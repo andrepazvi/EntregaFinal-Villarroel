@@ -3,7 +3,6 @@ import "./Item.css";
 import { Link } from "react-router-dom";
 
 const Item = ({ id, name, img, price, stock }) => {
-
   return (
     <article className="CardItem">
       <header className="Header">
@@ -19,16 +18,15 @@ const Item = ({ id, name, img, price, stock }) => {
           Precio: ${price}
         </p>
         <p className="Info">
-          Stock disponible: ${stock}
+          Stock disponible: {stock}
         </p>
       </section>
 
       <footer>
-        <Link to={`/item/${id}`} className='Option'> ver detalle </Link>
+        <Link to={`/item/${id}`} className='Option'>Ver Detalle</Link>
       </footer>
     </article>
-
-  )
-
+  );
 }
-export default Item
+
+export default Item;

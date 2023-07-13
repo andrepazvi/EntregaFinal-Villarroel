@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { getProductById } from "../../asyncMock";
+import './ItemDetailContainer.css';
 
 const ItemDetailContainer = ({ itemId }) => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const productData = await getProductById(itemId);
-      setProduct(productData);
+      try {
+        const productData = await getProductById(itemId);
+        setProduct(productData);
+      } catch (error) {
+        console.log('Error fetching product:', error);
+      }
     };
 
     fetchProduct();

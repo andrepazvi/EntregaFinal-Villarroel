@@ -9,10 +9,17 @@ const ItemListContainer = () => {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    const funcion = categoryId ? getProductsByCategory : getProducts;
-    funcion(categoryId)
-      .then((res) => setProducts(res))
-      .catch((error) => console.log(error));
+    const fetchData = async () => {
+      try {
+        const fetchFunction = categoryId ? getProductsByCategory : getProducts;
+        const productsData = await fetchFunction(categoryId);
+        setProducts(productsData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
   }, [categoryId]);
 
   return (
@@ -23,4 +30,3 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
- 

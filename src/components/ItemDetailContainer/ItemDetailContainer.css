@@ -1,8 +1,7 @@
 .ItemImg {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  text-align: center;
+}
