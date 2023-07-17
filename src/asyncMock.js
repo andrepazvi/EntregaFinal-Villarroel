@@ -4,7 +4,7 @@ const products = [
       id: '1',
       name: 'RayBan Wayfarer 0RB2140',
       price: 124900,
-      category: '4',
+      category: '1',
       img: 'https://www.ryk.cl/on/demandware.static/-/Sites-ryk-master-catalog/default/dw24982b50/images/large/F0410478/F0410478.jpg',
       stock: 10,
       description: 'Descripción de RayBan Wayfarer 0RB2140'

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getProductById } from "../../asyncMock";
 import './ItemDetailContainer.css';
+import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetailContainer = ({ itemId }) => {
+const ItemDetailContainer = ({ itemId, showItemCount }) => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -25,8 +26,9 @@ const ItemDetailContainer = ({ itemId }) => {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p>Price: ${product.price}</p>
-          <button>-</button>
-          <button>+</button>
+          {showItemCount && (
+            <ItemCount initial={1} stock={product.stock} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
+          )}
         </div>
       ) : (
         <p>Loading...</p>

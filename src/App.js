@@ -8,18 +8,26 @@ function App() {
   return (
     <div className="app">
       <div className="app-container">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:categoryId" element={<ItemListContainer />} />
-          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          <Route path="*" element={<h1>404 NOT FOUND</h1>} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route
+              path="/"
+              element={<ItemListContainer greeting={'Bienvenidos'} />}
+            />
+            <Route
+              path="/category/:categoryId"
+              element={<ItemListContainer greeting={'Bienvenidos'} />}
+            />
+            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+            <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   );
 }
 
 export default App;
+
+
