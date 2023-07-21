@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getProductById } from "../../asyncMock";
 import './ItemDetailContainer.css';
 import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetailContainer = ({ itemId, showItemCount }) => {
+const ItemDetailContainer = ({ showItemCount }) => {
+  const { itemId } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {

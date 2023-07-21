@@ -1,8 +1,9 @@
 import React from "react";
 import "./Item.css";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
-const Item = ({ id, name, img, price, stock }) => {
+const Item = ({ id, name, img, price, stock, description, showItemCount }) => {
   return (
     <article className="CardItem">
       <header className="Header">
@@ -17,11 +18,14 @@ const Item = ({ id, name, img, price, stock }) => {
         <p className="Info">
           Precio: ${price}
         </p>
-        <p className="Info">
-          Stock disponible: {stock}
-        </p>
+        {showItemCount ? (
+          <div>
+            <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
+          </div>
+        ) : (
+          <p>{description}</p>
+        )}
       </section>
-
       <footer>
         <Link to={`/item/${id}`} className='Option'>Ver Detalle</Link>
       </footer>
