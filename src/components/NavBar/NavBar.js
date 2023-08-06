@@ -21,14 +21,14 @@ const NavBar = ({ setShowItemCount }) => {
       </Link>
       <img src={logo} alt="Logo" className="logo-image" />
       <div className="buttons-container">
-        <NavLink to="/category/1" onClick={handleLensCategoryClick}>
+        <NavLink to="/category/sol" onClick={handleLensCategoryClick}>
           <button>Lentes de Sol</button>
         </NavLink>
-        <NavLink to="/category/2" onClick={handleLensCategoryClick}>
-          <button>Lentes de contacto</button>
-        </NavLink>
-        <NavLink to="/category/3" onClick={handleOtherCategoryClick}>
+        <NavLink to="/category/opticos" onClick={handleLensCategoryClick}>
           <button>Lentes ópticos</button>
+        </NavLink>
+        <NavLink to="/category/contacto" onClick={handleOtherCategoryClick}>
+          <button>Lentes de contacto</button>
         </NavLink>
       </div>
       <CartWidget />
