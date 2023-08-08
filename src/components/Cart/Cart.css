@@ -1,0 +1,24 @@
+/* Estilos para los botones "Seguir Mirando" y "Terminar Compra" */
+.Button,
+.Option {
+  padding: 10px 20px;
+  background-color: #10a3e7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Estilos para el botón "Terminar Compra" */
+.Option.Checkout {
+  background-color: #a78128;
+}
+
+/* Estilos para el botón "Seguir Mirando" */
+.Option.ContinueShopping {
+  background-color: #007bff;
+}

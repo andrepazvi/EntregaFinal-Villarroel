@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById } from "../../asyncMock";
 import './ItemDetailContainer.css';
-import ItemCount from "../ItemCount/ItemCount";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-const ItemDetailContainer = ({ showItemCount }) => {
-  const { itemId } = useParams();
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../config/firebase";
+
+const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
+  const { itemId } = useParams();
 
   useEffect(() => {
     const fetchProduct = async () => {
+      const docRef = doc(db, 'products', itemId);
+
       try {
-        const productData = await getProductById(itemId);
-        setProduct(productData);
+        const response = await getDoc(docRef);
+        if (response.exists()) {
+          const data = response.data();
+          const productAdapted = { id: response.id, ...data };
+          setProduct(productAdapted);
+        } else {
+          console.log("No such document!");
+        }
       } catch (error) {
-        console.log('Error fetching product:', error);
+        console.log(error);
       }
     };
 
@@ -23,20 +33,12 @@ const ItemDetailContainer = ({ showItemCount }) => {
 
   return (
     <div>
-      {product ? (
-        <div>
-          <h2>{product.name}</h2>
-          <p>{product.description}</p>
-          <p>Price: ${product.price}</p>
-          {showItemCount && (
-            <ItemCount initial={1} stock={product.stock} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
-          )}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      {
+        !product ? <h3>Loading...</h3> :
+        <ItemDetail product={product} />
+      }
     </div>
   );
-};
+}
 
 export default ItemDetailContainer;
