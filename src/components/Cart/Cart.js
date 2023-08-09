@@ -38,7 +38,7 @@ const Cart = () => {
       <h3>Total: ${total}</h3>
       <button onClick={handleClearCart} className="Button">Limpiar Carrito</button>
       <Link to='/' className='Option'>Seguir Mirando</Link>
-      <Link to='/checkout' className='Option'>Checkout</Link>
+      <Link to='/checkout' className='Option'>Pagar</Link>
     </div>
   );
 }

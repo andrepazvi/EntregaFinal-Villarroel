@@ -1,0 +1,60 @@
+/* CheckoutForm.css */
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .Form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  .Title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .Label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .Input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .Button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .Button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Alinear los campos verticalmente */
+  .Form label,
+  .Form input,
+  .Form .Button {
+    display: block;
+  }
+  
+  .Form .Button {
+    margin-top: 10px;
+  }
+  

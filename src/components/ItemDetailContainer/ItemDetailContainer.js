@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const docRef = doc(db, 'products', itemId);
+      const docRef = doc(db, 'productos', itemId);
 
       try {
         const response = await getDoc(docRef);
